@@ -2,10 +2,13 @@ import re
 from typing import Dict, List
 
 import numpy as np
+import nltk
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
 from core.document_parser import URLData
+
 
 STOPWORDS = stopwords.words("russian") + stopwords.words("english")
 
