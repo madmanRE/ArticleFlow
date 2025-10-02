@@ -1,14 +1,11 @@
 from typing import Dict, List
 
-from nltk.corpus import stopwords
-
 from core.document_parser import URLData
 
 from .numeric_stats_extractor import NumericStatsExtractor
 from .text_stats_extractor import TextStatExtractor
 from .validator import UrlDataValidator
 
-STOPWORDS = stopwords.words("russian") + stopwords.words("english")
 
 
 class StatMaker:

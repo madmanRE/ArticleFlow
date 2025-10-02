@@ -1,11 +1,9 @@
 from typing import Dict, List
 
 import pandas as pd
-from nltk.corpus import stopwords
 
 from core.document_parser import URLData
 
-STOPWORDS = stopwords.words("russian") + stopwords.words("english")
 
 
 class NumericStatsExtractor:
