@@ -16,11 +16,17 @@ form_data = serp_parsing_form()
 if form_data and validate_form(form_data):
     with st.spinner("Формируется ТЗ, подождите..."):
         task_generator = TaskGenerator(**form_data)
-        st.session_state.technical_task = task_generator.generate()
+        top_urls, st.session_state.technical_task = task_generator.generate()
         st.session_state.model = form_data["model"]
         st.session_state.temperature = form_data["temperature"]
 
     if st.session_state.technical_task:
+
+        if top_urls:
+            st.subheader("URL для анализа")
+            for url in top_urls:
+                st.write(f"- {url}")
+
         file_name = name_report_file(form_data)
         st.session_state.file_name = file_name
         file_stream = create_word_file(

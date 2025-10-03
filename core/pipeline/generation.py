@@ -95,7 +95,9 @@ class TaskGenerator:
                 words=stats.get("words"),
                 numeric=stats.get("numeric"),
             )
+
+            return top_urls, technical_task
+
         else:
             technical_task = self._easy_llm.make_response()
-
-        return technical_task
+            return None, technical_task
