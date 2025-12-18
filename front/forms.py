@@ -8,7 +8,7 @@ def serp_parsing_form() -> Optional[Dict]:
         mode = st.selectbox("Выберите режим", ("easy", "hard"))
 
         model = st.selectbox("Укажите модель генерации ТЗ",
-                             ("openai/gpt-oss-20b:free", "deepseek/deepseek-chat-v3.1:free", "x-ai/grok-4-fast:free"))
+                             ("mistralai/devstral-2512:free", "openai/gpt-oss-20b:free", "xiaomi/mimo-v2-flash:free", "tngtech/deepseek-r1t2-chimera:free"))
         additional_prompt = st.text_area("Введите дополнительные данные для генерации")
         temperature = st.slider("Температура генерации", 0.0, 2.0, 0.5, 0.05)
 
